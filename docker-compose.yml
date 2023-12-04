@@ -1,0 +1,21 @@
+version: '3'
+
+name: marino-app
+
+services:
+  web_app:
+    container_name: web_marino_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+      - 24678:24678
+    volumes:
+      - .:/opt/project
+      # - web:/opt/project/node_modules
+    environment:
+      - NODE_ENV=development
+
+volumes:
+  web:

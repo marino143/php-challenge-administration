@@ -1,0 +1,159 @@
+@import "../core/_variables.scss";
+@import "../mixins/_breakpoints.scss";
+
+.el-dialog {
+  width: 720px;
+  max-width: 720px;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  max-height: calc(100vh - 20%);
+  margin: 80px auto;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(83, 116, 133, 0);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey-40;
+    border-radius: 12px;
+    outline: 0;
+  }
+
+  // Tablet
+  @include media-breakpoint-down(lg) {
+    width: 580px;
+    max-width: 580px;
+  }
+
+  // Mobile
+  @include media-breakpoint-down(md) {
+    margin-top: 0;
+    width: 100%;
+    min-height: unset;
+    max-height: unset;
+    margin-bottom: 0;
+    border-radius: 4px 4px 0 0;
+  }
+
+  &--confirmation {
+    width: 420px;
+
+    // Tablet
+    @include media-breakpoint-down(lg) {
+      width: 420px;
+    }
+
+    // Mobile
+    @include media-breakpoint-down(md) {
+      margin-top: calc(100vh - 186px);
+      width: 100%;
+      min-height: auto;
+      margin-bottom: 0;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .el-dialog__body {
+      // Mobile
+      @include media-breakpoint-down(md) {
+        padding: 16px 16px 4px;
+      }
+    }
+
+    .el-dialog__message {
+      font-size: 16px;
+      font-weight: 300;
+      margin-bottom: 24px;
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .el-dialog__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    margin: 0;
+    line-height: 1;
+
+    // Mobile
+    @include media-breakpoint-down(md) {
+      padding: 24px 16px 20px;
+    }
+
+    .el-dialog__title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+
+      // Mobile
+      @include media-breakpoint-down(md) {
+        font-size: 16px;
+      }
+    }
+
+    .el-dialog__headerbtn {
+      position: unset;
+      width: unset;
+      height: unset;
+      padding: 0;
+      font-size: 20px;
+      line-height: 1;
+
+      .el-dialog__close {
+        color: $black;
+      }
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0 24px 32px;
+    color: $black;
+    word-break: break-word;
+
+    // Mobile
+    @include media-breakpoint-down(md) {
+      padding: 0 16px 16px;
+    }
+  }
+
+  .el-dialog__close--bottom {
+    display: none;
+
+    // Mobile
+    @include media-breakpoint-down(md) {
+      display: block;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      color: $black;
+    }
+  }
+
+  .el-button {
+    height: 58px;
+  }
+}
+
+.el-overlay {
+  background-color: rgba(0 , 0, 0, 0.8);
+}
+
+.el-overlay-dialog {
+  // Mobile
+  @include media-breakpoint-down(md) {
+    top: unset;
+    max-height: 100vh;
+  }
+}

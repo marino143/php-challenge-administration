@@ -1,0 +1,29 @@
+@use "theme/_index.scss";
+
+@import "mixins/_functions.scss";
+@import "mixins/_breakpoints.scss";
+
+@import "core/_variables.scss";
+@import "core/_base.scss";
+
+@import "elements/_form.scss";
+@import "elements/_buttons.scss";
+@import "elements/_dialog.scss";
+@import "elements/_table.scss";
+@import "elements/_pagination.scss";
+@import "elements/_statistic.scss";
+@import "elements/_menu.scss";
+
+@import "content/_main.scss";
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

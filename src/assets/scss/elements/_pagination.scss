@@ -1,0 +1,18 @@
+@import '../core/_variables.scss';
+@import '../mixins/_breakpoints.scss';
+
+.el-pagination.is-background .btn-prev.is-active,
+.el-pagination.is-background .btn-next.is-active,
+.el-pagination.is-background .el-pager li.is-active {
+  background-color: $primary;
+  color: $white;
+  font-weight: 300;
+}
+
+.el-pager li:hover {
+  color: $primary;
+}
+
+.el-pagination button:hover {
+  color: $primary;
+}

@@ -1,0 +1,104 @@
+@import "../core/_variables.scss";
+@import "../mixins/_functions.scss";
+@import "../mixins/_breakpoints.scss";
+
+.el-button, a.el-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: $primary-font;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 12px 16px;
+  height: 58px;
+  transition: $transition;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &.el-button--block {
+    width: 100%;
+  }
+
+  &.el-button--square {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    padding: 0;
+    min-width: unset;
+    min-height: unset;
+    border-radius: 4px;
+
+    svg {
+      margin-right: 0;
+    }
+  }
+
+  &.el-button--medium {
+    padding: 14px;
+    font-size: 12px;
+    min-width: 64px;
+    min-height: 32px;
+  }
+
+  &.el-button--small {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-width: 90px;
+    min-height: 36px;
+    height: unset;
+  }
+
+  &.el-button--extra-small {
+    padding: 6px 8px;
+    min-width: 60px;
+    min-height: unset;
+    max-height: 24px;
+    font-size: 10px;
+    border-radius: 4px;
+  }
+
+  &.el-button--delete {
+    padding: 0;
+    margin-right: 12px;
+    width: unset;
+    min-width: unset;
+    max-width: unset;
+    height: unset;
+    min-height: unset;
+    max-height: unset;
+    font-size: 12px;
+    color: $error-10;
+    border: 0;
+  }
+
+  + .el-button {
+    margin-left: 8px;
+
+    // Mobile
+    @include media-breakpoint-down(md) {
+      margin-left: 4px;
+    }
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+  }
+}
+
+.el-button--primary, a.el-button--primary {
+  @include button($white, $primary, $primary, $white, $primary, $primary, $white, $primary, $primary);
+}
+
+.el-button--grey, a.el-button--grey {
+  @include button($primary, $grey-60, $grey-60, $primary, $grey-50, $grey-50, $primary, $grey-50, $grey-50);
+}

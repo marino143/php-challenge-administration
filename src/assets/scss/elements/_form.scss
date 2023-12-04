@@ -1,0 +1,346 @@
+@import "../core/_variables.scss";
+@import "../mixins/_breakpoints.scss";
+
+.el-form {
+  .el-form-item {
+    position: relative;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.is-error {
+      .el-input__wrapper {
+        box-shadow: 0 0 0 1px rgba(225, 118, 85) inset;
+      }
+    }
+
+    &--is-right {
+      .el-form-item__content {
+        justify-content: right;
+      }
+    }
+
+    &--is-calculation {
+      padding: 14px 16px;
+      background-color: $grey-60;
+      border-radius: 4px;
+    }
+
+    &--is-upload {
+      padding: 14px 16px;
+      border: 1px solid $grey-50;
+      border-radius: 4px;
+      height: 32px;
+
+      span {
+        position: absolute;
+        top: 10px;
+      }
+    }
+
+
+    &--is-color-picker {
+      .el-form-item__label {
+        top: 2px;
+      }
+
+      .el-form-item__content {
+        padding: 18px 14px;
+        border: 1px solid $grey-50;
+        border-radius: 4px;
+
+        .el-color-picker {
+          position: relative;
+          top: 13px;
+        }
+      }
+    }
+
+    &--tiny-mct {
+      display: block;
+      padding: 36px 16px 16px;
+      border: 1px solid $grey-50;
+      border-radius: 4px;
+
+      .el-form-item__content {
+        display: block;
+
+        .tox-tinymce {
+          border: 1px solid $grey-30;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    &--is-checkbox {
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .el-form-item__icon {
+        position: relative;
+        top: 3px;
+        width: 16px;
+        margin-right: 4px;
+      }
+    }
+
+    &--is-multiple {
+      .el-input__wrapper {
+        height: unset !important;
+        max-height: unset !important;
+        min-height: 60px !important;
+      }
+    }
+
+    .el-form-item__error {
+      display: none;
+    }
+
+    .el-form-item__label {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      height: auto;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: $primary;
+      padding: 0;
+      background-color: transparent;
+      z-index: 1;
+
+      &:before {
+        position: absolute;
+        right: -8px;
+        margin-right: 0;
+        color: $primary;
+      }
+    }
+
+    .el-input {
+      .el-input__wrapper {
+        padding: 0 16px;
+        height: 60px;
+        max-height: 60px;
+        min-height: 60px;
+      }
+
+      .el-input__inner {
+        position: relative;
+        top: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        color: $shadow-60;
+        line-height: 1.6;
+      }
+    }
+
+    .el-input-number {
+      width: 100%;
+
+      .el-input-number__increase,
+      .el-input-number__decrease {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+      }
+
+      .el-input__inner {
+        text-align: left;
+      }
+    }
+
+    .el-select {
+      width: 100%;
+
+      .el-select-tags-wrapper.has-prefix {
+        margin-left: 14px;
+      }
+
+      &__tags {
+        top: 30px;
+        transform: unset;
+      }
+    }
+
+    .el-tag {
+      padding: 0 8px;
+      border-width: 0;
+    }
+
+    .el-tag.is-closable {
+      padding-right: 6px;
+    }
+
+    .el-textarea {
+      .el-textarea__wrapper {
+        padding: 0 16px;
+      }
+
+      .el-textarea__inner {
+        padding: 32px 16px 16px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+    }
+
+    .el-date-editor {
+      width: 100%;
+
+      &.el-input {
+        height: auto;
+      }
+
+      .el-input__wrapper {
+        padding: 0 16px;
+        height: 60px;
+        max-height: 60px;
+        min-height: 60px;
+      }
+
+      .el-input__prefix {
+        display: none;
+      }
+
+      .el-input__inner {
+        position: relative;
+        top: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        color: $shadow-60;
+        line-height: 1.6;
+      }
+    }
+
+    .el-date-editor--daterange {
+      &.el-input__wrapper {
+        height: 40px;
+        padding: 20px 16px 0;
+        justify-content: flex-start;
+      }
+
+      .el-range__icon {
+        display: none;
+      }
+
+      .el-range-separator {
+        flex: unset;
+        height: 0;
+      }
+
+      .el-range-input {
+        width: 73px;
+        height: 14px;
+        text-align: left;
+        line-height: 14px;
+      }
+
+      .el-range__close-icon {
+        display: none;
+      }
+    }
+
+    .el-checkbox {
+      display: flex;
+      white-space: normal;
+      word-break: break-word;
+
+      .el-checkbox__input {
+        &.is-checked {
+          .el-checkbox__inner {
+            background-color: $primary;
+            border-color: $primary;
+          }
+        }
+
+        .el-checkbox__inner {
+          width: 18px;
+          height: 18px;
+          border-color: $primary;
+
+          &::after {
+            width: 4px;
+            height: 10px;
+            left: 5px;
+            top: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  .el-form-item.is-required:not(.is-no-asterisk).asterisk-left > .el-form-item__label:before,
+  .el-form-item.is-required:not(.is-no-asterisk).asterisk-left > .el-form-item__label-wrap > .el-form-item__label:before {
+    color: $shadow-60;
+    margin-right: 0;
+  }
+
+  .el-row {
+    .el-col {
+      .el-form-item {
+        &:last-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  .el-form-group {
+    border: 1px dashed $grey-50;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+
+    &__title {
+      font-size: 16px;
+      font-weight: 700;
+      color: $shadow-60;
+    }
+
+    &__content {
+      margin-top: 16px;
+
+      &--is-inline {
+        display: flex;
+        align-items: center;
+
+        .el-form-item {
+          font-size: 16px;
+          margin-bottom: 0;
+          margin-right: 12px;
+
+          &:last-child {
+            flex-grow: 1;
+          }
+
+          .el-input .el-input__inner {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &--is-filter {
+    .el-form-item {
+      margin-bottom: 0;
+      margin-right: 12px;
+    }
+  }
+}
+
+.el-select-dropdown__item.selected {
+  font-weight: 300;
+  color: $primary;
+}
+
+.tox-tinymce-aux {
+  z-index: 9999 !important;
+}

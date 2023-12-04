@@ -1,0 +1,14 @@
+@import '../core/_variables.scss';
+@import '../mixins/_breakpoints.scss';
+
+.el-statistic {
+  --el-statistic-content-font-size: 28px;
+}
+
+.statistic-card {
+  padding: 20px;
+  border-radius: 4px;
+  background-color: var(--el-bg-color-overlay);
+  border: 1px solid $grey-50;
+  margin-bottom: 16px;
+}
